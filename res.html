@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="icon" type="image/png" href="icon.png">
+        <title>资源列表</title>
+        <style>
+            a:link
+            {
+                color:blue;
+                text-decoration:none;
+            }
+            a:active
+            {
+                text-decoration:underlined;
+            }            
+            a:visited
+            {
+                color:mediumblue;
+                text-decoration:none;
+            }            
+        </style>
+        <script>
+            function swap_display(id)
+            {
+                e = document.getElementById(id);
+                dp = document.getElementById(id + "_display")
+                if(e.style.display == "none")
+                {
+                    e.style.display = "";
+                    dp.innerHTML = "折叠";
+                }
+                else
+                {
+                    e.style.display = "none";
+                    dp.innerHTML = "展开";
+                }                
+            }
+        </script>
+    </head>
+    <body>
+        <a href="index.html"><img src="icon.png" width="150px" height="150px" style="position:absolute;left:25px;top:25px;"></a>
+        <div style="position:absolute;left:200px;top:25px;right:25px;">
+            <div style="border:5px outset lightcyan;background-color:lightcyan;">
+                <h1 style="margin:5px;">资源列表</h1>
+                <hr style="margin:0px 5px;">
+                <p style="margin:5px;">此页面列出了所有可供下载的资源。</p>
+                <p style="margin:5px;">学识报 [<u style="color:blue;" onpclick="swap_display('konodu')" id="konodu_display">展开</u>]</p>
+                <div id="konodu" style="display:none;">
+                    <p style="margin:5px;">第一期</p>
+                    <p style="margin:5px;">第二期</p>
+                </div>
+                <p style="margin:5px;">More Advancements Plus [<u style="color:blue;" onclick="swap_display('madv_plus')" id="madv_plus_display">展开</u>]</p>
+                <div id="madv_plus" style="display:none;">
+                    <p style="margin:5px;">Alpha Incipient Renovate</p>
+                    <p style="margin:5px;">26w15a</p>
+                    <p style="margin:5px;">25w18a / AIR rc-1</p>
+                    <p style="margin:5px;">Alpha Replacing Elementarily</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
